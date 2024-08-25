@@ -56,7 +56,7 @@ public class User_Controller {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deletar_usuario(@PathVariable Long id){
 		userService.deletar_usuario(id);
-		 return ResponseEntity.noContent().build(); //Usado normalmente em exclusão, pois não retorna nada
+		 return ResponseEntity.noContent().build();
 	}
 
 }
