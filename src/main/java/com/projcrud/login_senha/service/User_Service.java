@@ -3,7 +3,7 @@ package com.projcrud.login_senha.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder; //Spring Segurity
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.projcrud.login_senha.entity.User;
@@ -31,7 +31,7 @@ public class User_Service {
 	}
 	
 	public User AutenticarUsuario(String email, String senha) {
-		User user = userRepository.findByEmail(email); //select * from ... where email = ...
+		User user = userRepository.findByEmail(email);
 		if(user != null && criptoSenha.matches(senha, user.getSenha())) {
 			return user;
 		}
